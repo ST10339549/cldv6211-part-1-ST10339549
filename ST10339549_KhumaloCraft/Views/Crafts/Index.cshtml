@@ -1,0 +1,30 @@
+﻿@using System.Globalization
+@model IEnumerable<ST10339549_KhumaloCraft.Models.Crafts>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>My Work</title>
+</head>
+<body>
+    <h2>My Work</h2>
+    <div class="container">
+        <div class="row">
+            @foreach (var craftwork in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img class="card-img-top" src="@craftwork.ImageUrl" alt="@craftwork.Name" />
+                        <div class="card-body">
+                            <h5 class="card-title">@craftwork.Name</h5>
+                            <p class="card-text">@craftwork.Description</p>
+                            <h5 class="card-title">@craftwork.Price.ToString("C", new CultureInfo("en-ZA"))</h5>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
